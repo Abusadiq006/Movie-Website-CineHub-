@@ -1,0 +1,195 @@
+/* -------------------------
+   ✅ IMPORT GOOGLE FONTS FIRST
+-------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* -------------------------
+   ✅ TAILWIND DIRECTIVES
+-------------------------- */
+@import "tailwindcss";
+
+/* -------------------------
+   ✅ CUSTOM THEME VARIABLES
+-------------------------- */
+@theme {
+  --color-primary: #030014;
+  --color-light-100: #cecefb;
+  --color-light-200: #a8b5db;
+  --color-gray-100: #9ca4ab;
+  --color-dark-100: #0f0d23;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --breakpoint-xs: 480px;
+  --background-image-hero-pattern: url("/background.jpeg");
+}
+
+/* -------------------------
+   ✅ BASE STYLES
+-------------------------- */
+@layer base {
+  body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--color-primary);
+    font-optical-sizing: auto;
+  }
+
+  h1 {
+    @apply mx-auto max-w-4xl text-center text-5xl font-bold leading-tight tracking-normal;
+  }
+
+  h2 {
+    @apply text-2xl font-bold text-white sm:text-3xl;
+  }
+
+  main {
+    @apply min-h-screen relative bg-primary;
+  }
+
+  header {
+    @apply sm:mt-10 mt-5;
+  }
+
+  header img {
+    @apply w-full max-w-lg h-auto object-contain mx-auto drop-shadow-md;
+  }
+}
+
+/* -------------------------
+   ✅ COMPONENT STYLES
+-------------------------- */
+@layer components {
+  .pattern {
+    @apply bg-hero-pattern w-screen bg-center bg-cover absolute z-0;
+  }
+
+  .wrapper {
+    @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
+  }
+
+  .trending {
+    @apply mt-20;
+  }
+
+  .trending ul {
+    @apply flex flex-row overflow-y-auto gap-5 mt-10 w-full hide-scrollbar;
+  }
+
+  .trending ul li {
+    @apply min-w-[230px] flex flex-row items-center;
+  }
+
+  .trending ul li p {
+    @apply fancy-text mt-[22px] text-nowrap;
+  }
+
+  .trending ul li img {
+    @apply w-[127px] h-[163px] rounded-lg object-cover -ml-3.5;
+  }
+
+  .search {
+    @apply w-full bg-light-100/5 px-4 py-3 rounded-lg mt-10 max-w-3xl mx-auto;
+  }
+
+  .search div {
+    @apply relative flex items-center;
+  }
+
+  .search img {
+    @apply absolute left-2 h-5 w-5;
+  }
+
+  .search input {
+    @apply w-full bg-transparent py-2 sm:pr-10 pl-10 text-base text-gray-200;
+  }
+
+  .all-movies {
+    @apply space-y-9;
+  }
+
+  .all-movies ul {
+    @apply grid grid-cols-1 gap-5 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+  }
+
+  .movie-card {
+    @apply bg-dark-100 p-5 rounded-2xl shadow-inner shadow-light-100/10;
+  }
+
+  .movie-card img {
+    @apply rounded-lg h-auto w-full;
+  }
+
+  .movie-card h3 {
+    @apply text-white font-bold text-base line-clamp-1;
+  }
+
+  .movie-card .content {
+    @apply mt-2 flex flex-row items-center flex-wrap gap-2;
+  }
+
+  .movie-card .rating {
+    @apply flex flex-row items-center gap-1;
+  }
+
+  .movie-card .rating img {
+    @apply size-4 object-contain;
+  }
+
+  .movie-card .rating p {
+    @apply font-bold text-base text-white;
+  }
+
+  .movie-card .content span {
+    @apply text-sm text-gray-100;
+  }
+
+  .movie-card .content .lang {
+    @apply capitalize text-gray-100 font-medium text-base;
+  }
+
+  .movie-card .content .year {
+    @apply text-gray-100 font-medium text-base;
+  }
+}
+
+/* -------------------------
+   ✅ CUSTOM UTILITIES
+-------------------------- */
+@utility text-gradient {
+  @apply bg-linear-to-r from-[#d6c7ff] to-[#ab8bff] bg-clip-text text-transparent;
+}
+
+@utility fancy-text {
+  -webkit-text-stroke: 5px rgba(206, 206, 251, 0.5);
+  font-size: 190px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.text-gradient {
+  color: #d6c7ff;
+}
+
+.search input::placeholder {
+  transition: color 0.3s ease;
+}
+
+.search input::placeholder {
+  transition: color 0.3s ease;
+}
+
+.search input:focus::placeholder {
+  color: #aaa;
+}
+
+.movie-card img {
+  object-fit: cover;
+  background-color: #111;
+}
