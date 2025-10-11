@@ -8,6 +8,9 @@ import Spinner from './components/Spinner.jsx'
 import { useDebounce } from 'react-use'
 import MovieDetails from './components/MovieDetails.jsx'
 
+import Trending from './pages/Trending.jsx'
+import About from './pages/About.jsx'
+
 const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY
 
 const Home = () => {
@@ -96,6 +99,9 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/movie/:id" element={<MovieDetails />} />
+      <Route path="/trending" element={<Trending />}/>
+      <Route path="/about" element={<About />}/>
+      <Route path="*" element={<h2 className='text-center text-gray-400 mt-10'>404 - Page Not Found</h2>} />
     </Routes>
     
   )
