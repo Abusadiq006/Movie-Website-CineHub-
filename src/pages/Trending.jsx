@@ -4,10 +4,6 @@ import Footer from "../components/Footer.jsx"
 import MovieCard from "../components/MovieCard.jsx"
 import Spinner from "../components/Spinner.jsx"
 import { Link } from "react-router-dom"
-
-
-const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY
-
 const Trending = () => {
   const [movieList, setMovieList] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
