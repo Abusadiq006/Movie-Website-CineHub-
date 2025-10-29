@@ -1,3 +1,4 @@
+import dotenv from "dotenv"
 import express from "express"
 import cors from "cors"
 import path from "path"
@@ -7,6 +8,8 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const app = express()
+
+dotenv.config()
 
 // Middleware
 app.use(cors())
